@@ -22,13 +22,11 @@ void setup(){
     sensorTemp2.begin();
     rtc.begin();
     rtc.adjust();
-
 }
 
 void loop(){
     updateSensorData();
-    lora.printSensorsData(sensorData);
-	//lora.sendSensorsDataPacket(sensorData);
+	lora.sendSensorsDataPacket(sensorData);
     delay(1000);
 }
 
